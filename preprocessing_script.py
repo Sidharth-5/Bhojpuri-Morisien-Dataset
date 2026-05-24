@@ -6,8 +6,8 @@ import re
 import unicodedata
 import os
 
-base_path = "/content/drive/MyDrive/Dataset"
-dataset_path = os.path.join(base_path, "dataset.csv")
+base_path = "/content/drive/MyDrive/manuscript"
+dataset_path = os.path.join(base_path, "masterdataset.csv")
 
 df = pd.read_csv(dataset_path)
 print(f"Loaded dataset: {len(df)} rows")
@@ -26,7 +26,7 @@ def clean_text(text):
 for col in ["Bhojpuri Morisien", "Kreol Morisien", "English"]:
     df[col] = df[col].apply(clean_text)
 
-df = df[(df["Bhojpuri"] != "") & (df["Kreol"] != "") & (df["English"] != "")]
+df = df[(df["Bhojpuri Morisien"] != "") & (df["Kreol Morisien"] != "") & (df["English"] != "")]
 df = df.drop_duplicates()
 df = df.loc[:, ~df.columns.str.contains("^Unnamed")]
 
