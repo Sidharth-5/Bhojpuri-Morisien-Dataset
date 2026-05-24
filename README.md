@@ -3,6 +3,7 @@
 This repository contains the preprocessing scripts used to clean and standardize datasets.
 
 ## Contents
+- preprocessed dataset in .csv format
 - preprocessing_script.py – Data cleaning pipeline
 
 ## Preprocessing Steps
